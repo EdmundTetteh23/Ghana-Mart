@@ -5,6 +5,7 @@ A sales performance dashboard built for Ghana SuperMart, an 8-store retail chain
 - [Overview](#overview)
 - [Project Brief and Problem Statement](#Project-Brief-and-Problem-Statement)
 - [Data Pipeline and Architecture](#Data-Pipeline-and-Architecture)
+- [Data Transformation and Cleaning](#Data-Transformation-and-Cleaning)
 - [Data Model and Relationships](#Data-Model-and-Relationships)
 - [Core DAX Measures and Formulas](#Core-DAX-Measures-and-Formulas)
 - [Dashboards and Visualizations](#Dashboards-and-Visualizations)
@@ -31,7 +32,8 @@ Ghana SuperMart lacked a centralized view of its financial and sales performance
 ## Data Pipeline and Architecture
 [ Raw Flat File ] ➔ [ Power Query ETL ] ➔ [ Star Schema Data Model ] ➔ [ Interactive Power BI Report ]
 
-## Power Query ETL Steps
+## Data Transformation and Cleaning
+### Power Query ETL Steps
 The raw transactional dataset (Ghana_SuperMart_Master_Data.csv) was normalized into 1 Fact Table and 3 Dimension Tables using Power Query to enforce data integrity and improve query performance:
 
 customer_dim
