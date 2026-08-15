@@ -3,10 +3,10 @@ A sales performance dashboard built for Ghana SuperMart, an 8-store retail chain
 
 ## Table of Contents
 - [Overview](#overview)
-- [Project Brief & Problem Statement](#Project-Brief-and-Problem-Statement)
-- [Data Pipeline & Architecture](#Data-Pipeline-and-Architecture)
-- [Data Model & Relationships](#Data-Model-and-Relationships)
-- [Core DAX Measures & Formulas](#Core-DAX-Measures-and-Formulas)
+- [Project Brief and Problem Statement](#Project-Brief-and-Problem-Statement)
+- [Data Pipeline and Architecture](#Data-Pipeline-and-Architecture)
+- [Data Model and Relationships](#Data-Model-and-Relationships)
+- [Core DAX Measures and Formulas](#Core-DAX-Measures-and-Formulas)
 - [Dashboards and Visualizations](#Dashboards-and-Visualizations)
 - [Key Business Insights](#Key-Business-Insights)
 - [Strategic Recommendations](#Strategic-Recommendations)
@@ -18,7 +18,7 @@ Ghana SuperMart's leadership handed over a single, massive, unstructured sales f
 
 This project establishes a robust business intelligence framework by structuring flat operational files into an optimized relational Star Schema, applying ETL transformations in Power Query, and building intuitive visuals that enable retail executives to track high-level KPIs, unit volume economics, store performance, and product trends. 
 
-## Project Brief & Problem Statement
+## Project Brief and Problem Statement
 ### Problem Statement
 Ghana SuperMart lacked a centralized view of its financial and sales performance. Decisions were traditionally made based on raw intuition and flat spreadsheets, making it difficult to analyze store efficiency, track category margins, optimize inventory movement, and identify unprofitable operations. 
 
@@ -28,7 +28,7 @@ Ghana SuperMart lacked a centralized view of its financial and sales performance
 •	Store & Regional Analytics: Analyze branch performance across 8 retail stores in Ghana to identify operational leaders and laggards. 
 •	Demographic & Segment Tracking: Profile customer segments and geographic locations to support localized marketing and stocking strategies. 
 
-## Data Pipeline & Architecture
+## Data Pipeline and Architecture
 [ Raw Flat File ] ➔ [ Power Query ETL ] ➔ [ Star Schema Data Model ] ➔ [ Interactive Power BI Report ]
 
 ## Power Query ETL Steps
@@ -51,7 +51,7 @@ fact_sales
 - Column Selection: Kept specific dimensional attributes using Remove Other Columns for lean dimension tables.
 - Normalization: Stripped descriptive text columns (StoreName, City, Region, ProductName, Category, CustomerName, etc.) out of Fact_Sales using Remove Columns to lean out the central transaction record. 
 
-## Data Model & Relationships
+## Data Model and Relationships
 The model follows a classic Star Schema centered around the transactional fact table, configured with one-to-many (1:*) single-direction filter relationships:
 
 <img width="1010" height="492" alt="GhM Data Model" src="https://github.com/user-attachments/assets/5b38bea8-fdf8-4de7-b78c-4750a5dbc489" />
@@ -61,14 +61,14 @@ The model follows a classic Star Schema centered around the transactional fact t
 - Product_dim: Details product specifications (ProductName, Category, BasePrice).
 - Customer_dim: Tracks customer attributes (CustomerName, Gender, CustomerSegment).
 
-## Core DAX Measures & Formulas
+## Core DAX Measures and Formulas
 - Total Revenue = SUM(Fact_Sales[TotalAmount])
 - Total Orders = COUNT(Fact_Sales[SalesID])
 - Total Quantities = SUM(Fact_Sales[Quantity])
 - Total Cost = SUMX(Fact_Sales, RELATED(Dim_Product[BasePrice]) * Fact_Sales[Quantity])
 - Total Profit = Total Revenue − Total Cost
 
-## Dashboards & Visualizations
+## Dashboards and Visualizations
 ### Dashboard — Financial Performance & Category Analysis
 A single-page, interactive report featuring dynamic bookmark toggle buttons (Revenue, Orders, Quantity) that allow executives to switch between financial, transaction, and volume perspectives without changing pages.
 
@@ -85,7 +85,7 @@ A single-page, interactive report featuring dynamic bookmark toggle buttons (Rev
 - Operating Loss: Total Revenue is GH₵399.3K against Total Cost of GH₵413.5K, generating a net loss of -GH₵14.3K (-3.6% net margin).
 - Negative Unit Economics: On average, every transaction costs the business GH₵5.68 more than it yields (GH₵159.72 revenue vs. GH₵165.40 cost per order across 2,500 orders). 
 
-### Operational & Inventory Intelligence
+### Operational and Inventory Intelligence
 - Volume Heavyweights: Beverages and Food dominate retail volume, driving 10.0K out of 13.8K total units sold (72% of total inventory moved).
 - Balanced Store Sales: Kumasi City Mart leads store volume (1,888 units), while Accra Mall SuperMart trails lowest (1,451 units) — demonstrating a balanced volume spread across branches.
 - Single Product Outlier: The Kente Print Shirt accounts for approximately 96% of Apparel category sales (1,151 units) and is the single highest-selling product across the entire retail chain.
