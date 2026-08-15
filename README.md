@@ -69,7 +69,7 @@ Total Cost = SUMX(Fact_Sales, RELATED(Dim_Product[BasePrice]) * Fact_Sales[Quant
 Total Profit = Total Revenue − Total Cost
 
 ## Dashboards & Visualizations
-## Dashboard — Financial Performance & Category Analysis
+### Dashboard — Financial Performance & Category Analysis
 A single-page, interactive report featuring dynamic bookmark toggle buttons (Revenue, Orders, Quantity) that allow executives to switch between financial, transaction, and volume perspectives without changing pages.
 
 <img width="608" height="457" alt="Ghanamart Dashboard" src="https://github.com/user-attachments/assets/5cc12271-3319-4c3f-a885-25b22b58506d" />
