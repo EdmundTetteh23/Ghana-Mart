@@ -61,9 +61,18 @@ The model follows a classic Star Schema centered around the transactional fact t
 •	Product_dim: Details product specifications (ProductName, Category, BasePrice).
 •	Customer_dim: Tracks customer attributes (CustomerName, Gender, CustomerSegment).
 
+## Core DAX Measures & Formulas
+Total Revenue = SUM(Fact_Sales[TotalAmount])
+Total Orders = COUNT(Fact_Sales[SalesID])
+Total Quantities = SUM(Fact_Sales[Quantity])
+Total Cost = SUMX(Fact_Sales, RELATED(Dim_Product[BasePrice]) * Fact_Sales[Quantity])
+Total Profit = Total Revenue − Total Cost
+
 ## Dashboards & Visualizations
 ## Dashboard — Financial Performance & Category Analysis
 A single-page, interactive report featuring dynamic bookmark toggle buttons (Revenue, Orders, Quantity) that allow executives to switch between financial, transaction, and volume perspectives without changing pages.
+
+<img width="608" height="457" alt="Ghanamart Dashboard" src="https://github.com/user-attachments/assets/5cc12271-3319-4c3f-a885-25b22b58506d" />
 
 #### Core Visual Matrix (Dynamic Views):
 - Trend Line Chart: Tracks monthly performance over time (e.g., Revenue by Month peaking in April and May, dipping in February).
