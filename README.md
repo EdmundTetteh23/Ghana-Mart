@@ -3,7 +3,7 @@ A sales performance dashboard built for Ghana SuperMart, an 8-store retail chain
 
 ## Table of Contents
 - [Overview](#overview)
-- [Project Brief & Problem Statement](#Project-Brief-&-Problem-Statement)
+- [Project Brief & Problem Statement](#Project-Brief-and-Problem-Statement)
 - [Data Pipeline & Architecture](#Data-Pipeline-and-Architecture)
 - [Data Model & Relationships](#Data-Model-and-Relationships)
 - [Core DAX Measures & Formulas](#Core-DAX-Measures-and-Formulas)
