@@ -71,6 +71,28 @@ A single-page, interactive report featuring dynamic bookmark toggle buttons (Rev
 - Category Breakdown Bar Chart: Compares performance across product categories (Beverages leading at GH₵148K, followed by Apparel at GH₵134K, Food at GH₵88K, Personal Care at GH₵25K, and Snacks at GH₵4K).
 - Product Ranking Bar Chart: Detailed bar chart ranking individual items (led by Kente Print Shirt at GH₵134K, Club Beer 6-pack at GH₵53K, and Milo Cocoa Powder at GH₵40K).
 
+## Key Business Insights
+### Financial Performance
+•	Operating Loss: Total Revenue is GH₵399.3K against Total Cost of GH₵413.5K, generating a net loss of -GH₵14.3K (-3.6% net margin). 
+•	Negative Unit Economics: On average, every transaction costs the business GH₵5.68 more than it yields (GH₵159.72 revenue vs. GH₵165.40 cost per order across 2,500 orders). 
+
+### Operational & Inventory Intelligence
+- Volume Heavyweights: Beverages and Food dominate retail volume, driving 10.0K out of 13.8K total units sold (72% of total inventory moved).
+- Balanced Store Sales: Kumasi City Mart leads store volume (1,888 units), while Accra Mall SuperMart trails lowest (1,451 units) — demonstrating a balanced volume spread across branches.
+- Single Product Outlier: The Kente Print Shirt accounts for approximately 96% of Apparel category sales (1,151 units) and is the single highest-selling product across the entire retail chain.
+- Local Product Preference: High-volume sales are heavily concentrated in local staple goods including Shito Pepper Sauce, Gari, Palm Oil, Alomo Bitters, and FanMilk Yoghurt.
+
+## Strategic Recommendations
+- Audit Cost & Pricing Architecture: Immediately re-examine base supplier prices and retail markups to fix the negative unit margin (-GH₵5.68 per order).
+- Leverage High-Volume Staples: Protect supply chains for local staples (Food & Beverages) to retain retail foot traffic.
+- Expand Cultural Apparel Line: Investigate adding culturally distinctive products similar to the Kente Print Shirt given its massive market demand.
+- Address Capital Branch Performance: Investigate stock availability, pricing, or footfall issues at Accra Mall SuperMart to lift unit sales in the capital. 
+
+## Tech Stack
+- Data Transformation: Power Query (M Language)
+- Data Modeling & Analytics: Microsoft Power BI Desktop, DAX
+- Design & Visual Layout: Dynamic Toggle Buttons, Slicers, Star Schema Layout 
+
 
 
 
