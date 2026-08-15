@@ -46,27 +46,27 @@ store_dim
 fact_sales
 <img width="1366" height="768" alt="Fact_sales" src="https://github.com/user-attachments/assets/470f6dc1-386f-4f78-8b48-287ac5bbe46c" />
 
-•	Data Hygiene: Renamed base query to Fact_Sales and duplicated source queries for dimensional breakdown. 
-•	Primary Key Enforcement: Applied Remove Duplicates on ID headers across dimension queries (StoreID, ProductID, CustomerID) to guarantee key uniqueness. 
-•	Column Selection: Kept specific dimensional attributes using Remove Other Columns for lean dimension tables. 
-•	Normalization: Stripped descriptive text columns (StoreName, City, Region, ProductName, Category, CustomerName, etc.) out of Fact_Sales using Remove Columns to lean out the central transaction record. 
+- Data Hygiene: Renamed base query to Fact_Sales and duplicated source queries for dimensional breakdown.
+- Primary Key Enforcement: Applied Remove Duplicates on ID headers across dimension queries (StoreID, ProductID, CustomerID) to guarantee key uniqueness.
+- Column Selection: Kept specific dimensional attributes using Remove Other Columns for lean dimension tables.
+- Normalization: Stripped descriptive text columns (StoreName, City, Region, ProductName, Category, CustomerName, etc.) out of Fact_Sales using Remove Columns to lean out the central transaction record. 
 
 ## Data Model & Relationships
 The model follows a classic Star Schema centered around the transactional fact table, configured with one-to-many (1:*) single-direction filter relationships:
 
 <img width="1010" height="492" alt="GhM Data Model" src="https://github.com/user-attachments/assets/5b38bea8-fdf8-4de7-b78c-4750a5dbc489" />
 
-•	Fact_Sales: Stores central transactional metrics (SalesID, Quantity, TotalAmount, Date) linked via foreign keys (StoreID, ProductID, CustomerID). 
-•	Store_dim: Contains store branch lookup attributes (StoreName, City, Region).
-•	Product_dim: Details product specifications (ProductName, Category, BasePrice).
-•	Customer_dim: Tracks customer attributes (CustomerName, Gender, CustomerSegment).
+- Fact_Sales: Stores central transactional metrics (SalesID, Quantity, TotalAmount, Date) linked via foreign keys (StoreID, ProductID, CustomerID).
+- Store_dim: Contains store branch lookup attributes (StoreName, City, Region).
+- Product_dim: Details product specifications (ProductName, Category, BasePrice).
+- Customer_dim: Tracks customer attributes (CustomerName, Gender, CustomerSegment).
 
 ## Core DAX Measures & Formulas
-Total Revenue = SUM(Fact_Sales[TotalAmount])
-Total Orders = COUNT(Fact_Sales[SalesID])
-Total Quantities = SUM(Fact_Sales[Quantity])
-Total Cost = SUMX(Fact_Sales, RELATED(Dim_Product[BasePrice]) * Fact_Sales[Quantity])
-Total Profit = Total Revenue − Total Cost
+- Total Revenue = SUM(Fact_Sales[TotalAmount])
+- Total Orders = COUNT(Fact_Sales[SalesID])
+- Total Quantities = SUM(Fact_Sales[Quantity])
+- Total Cost = SUMX(Fact_Sales, RELATED(Dim_Product[BasePrice]) * Fact_Sales[Quantity])
+- Total Profit = Total Revenue − Total Cost
 
 ## Dashboards & Visualizations
 ### Dashboard — Financial Performance & Category Analysis
@@ -82,8 +82,8 @@ A single-page, interactive report featuring dynamic bookmark toggle buttons (Rev
 
 ## Key Business Insights
 ### Financial Performance
-•	Operating Loss: Total Revenue is GH₵399.3K against Total Cost of GH₵413.5K, generating a net loss of -GH₵14.3K (-3.6% net margin). 
-•	Negative Unit Economics: On average, every transaction costs the business GH₵5.68 more than it yields (GH₵159.72 revenue vs. GH₵165.40 cost per order across 2,500 orders). 
+- Operating Loss: Total Revenue is GH₵399.3K against Total Cost of GH₵413.5K, generating a net loss of -GH₵14.3K (-3.6% net margin).
+- Negative Unit Economics: On average, every transaction costs the business GH₵5.68 more than it yields (GH₵159.72 revenue vs. GH₵165.40 cost per order across 2,500 orders). 
 
 ### Operational & Inventory Intelligence
 - Volume Heavyweights: Beverages and Food dominate retail volume, driving 10.0K out of 13.8K total units sold (72% of total inventory moved).
@@ -101,19 +101,3 @@ A single-page, interactive report featuring dynamic bookmark toggle buttons (Rev
 - Data Transformation: Power Query (M Language)
 - Data Modeling & Analytics: Microsoft Power BI Desktop, DAX
 - Design & Visual Layout: Dynamic Toggle Buttons, Slicers, Star Schema Layout 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
